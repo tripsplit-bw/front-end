@@ -1,3 +1,13 @@
-intro {
+.intro {
     background-color: #F5F6F7;
+    min-height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.App-logo {
+    height: 20vmin;
+    margin: 0 auto;
+  }
