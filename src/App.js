@@ -16,6 +16,6 @@ function App() {
       <Route path='/trip' component={Trip} />
     </div>
   );
-}//comment
+}//comment new comment
 
 export default App;
