@@ -17,7 +17,7 @@ const User = styled(Field)`
     padding: 7px 20px; 
 `;
 
-const Costh6 = styled.h6`
+const Userh6 = styled.h6`
     color: #666a86;
     font-weight: bold;
     font-size: 16px;
@@ -29,7 +29,7 @@ const TripUserCard = props => {
     return (
         <Div1 style={{ display: props.hidden ? "none" : "block" }}>
             <Form>
-                <Costh6>Cost:</Costh6>
+                <Userh6>Users:</Userh6>
                 <Div2>
                     <User 
                     type="text"
