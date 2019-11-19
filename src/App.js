@@ -12,7 +12,8 @@ function App() {
     <div className="App">
       <Header />
       <Route exact path='/' component={CreateAccount} />
-      <Route path='/SignIn' component={SignIn} />
+      <Route path='/signIn' component={SignIn} />
+      <Route path='/trip' component={Trip} />
     </div>
   );
 }

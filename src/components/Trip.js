@@ -3,7 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import TripUserCard from '';
+import TripUserCard from './TripUserCard';
 
 
 
@@ -43,7 +43,7 @@ const Div3 = styled.div`
     align-items: center;
 `;
 
-const Addbutton = styled.data(Field)`
+const Addbutton = styled(Field)`
     background-color: none;
     border: none;
     width: 150px;
