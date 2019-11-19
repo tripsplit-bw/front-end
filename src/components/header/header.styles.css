@@ -1,5 +1,5 @@
 .intro {
-    background-color: #D1FFD7;
+    background-color: #666a86;
     min-height: 30vh;
     width: 100%;
     display: flex;
@@ -32,8 +32,8 @@
   }
 
   .register {
-      background-color: #666a86;
-      color: #D1FFD7;
+      background-color: #D1FFD7;
+      color: #666a86;
   }
 
   .signup {

@@ -1,15 +1,17 @@
 import React from 'react';
-
+import { Route } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/header/Header';
 import CreateAccount from './components/register/CreateAccount';
+import SignIn from './components/login/SignIn';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <CreateAccount />
+      <Route exact path='/' component={CreateAccount} />
+      <Route path='/SignIn' component={SignIn} />
     </div>
   );
 }

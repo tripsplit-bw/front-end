@@ -85,13 +85,13 @@ const CreateAccount = ({ values }) => {
           <Labels>Confirm Password</Labels>
           <FieldInfo type="password" name="confirmPassword" />
         </Div2>
-        <Link to ='/login'>
+        <Link to =''>
           <Button className="field" as="button" type="submit" name="submit">
           Create Account
           </Button>
         </Link>
       </Form>
-      <h6>Already have an account?<Link to ='/login'>
+      <h6>Already have an account?<Link to ='/SignIn'>
        <Span>Sign In</Span></Link></h6>
      
     </Div1>
