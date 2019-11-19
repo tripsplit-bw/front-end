@@ -4,10 +4,39 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .App-logo {
     height: 20vmin;
-    margin: 0 auto;
+    align-items: flex-start;
+  }
+
+ .top-btns {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    margin-right: 0;
+    /* background-color: red; */
+
+  }
+
+  .register, .signup {
+    margin: 12px;
+    padding: 2%;
+    border: none;
+    border-radius: 18px;
+    width: 13vw;
+    font-size: 1rem;  
+    text-transform: uppercase;
+
+  }
+
+  .register {
+      background-color: red;
+      color: rgb(236, 219, 219);
+  }
+
+  .signup {
+      border: 1px solid red;
+      background-color: #F5F6F7;
   }

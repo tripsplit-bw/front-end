@@ -7,9 +7,9 @@ export default function Header() {
     return (
        <header className="intro">
          <img src={logo} className="App-logo" alt="logo" />
-         <div classNames="top-btns">
-         <button className="register">Register</button>
-         <button className="signup">Sign In</button>
+         <div className="top-btns">
+          <button className="register">Register</button>
+          <button className="signup">Sign In</button>
          </div>
       </header>
     );
