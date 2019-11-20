@@ -5,11 +5,15 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 import TripCard from './../../TripCard';
+import Trip from './../Trip';
+
+
 
 const Title = styled.h1`
   color: #177c84;
   font-size: 44px;
 `;
+
 const Div1 = styled.div`
 
     // box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
@@ -31,6 +35,7 @@ const FieldInfo = styled(Field)`
   width: 200px;
   padding: 10px;
 `;
+
 const Fieldbutton = styled(Field)`
   border-radius: 20px;
   border: 1px solid #bdc3c7;
@@ -43,15 +48,16 @@ const Fieldbutton = styled(Field)`
 `;
 
 const Label3 = styled.label`
-  margin-right: 170px;
-  margin-bottom: 8px;
+  margin: 25px 170px 8px 0;
 `;
 
 const H4 = styled.h4`
   margin-top: 50px;
 `;
+
 const H3 = styled.h3`
   margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 const DashBoard = ({ values }) => {
@@ -70,7 +76,7 @@ const DashBoard = ({ values }) => {
         </Div2>
       </Form>
 
-      <H3>INCOMING</H3>
+      <H3>DASHBOARD</H3>
 
           {/* <h4>TO PAY</h4>
           <ToPay />
@@ -86,7 +92,7 @@ const DashBoard = ({ values }) => {
           <PaidToYou /> */}
 
           <TripCard />
-
+          <Trip />
     </Div1>
   );
 };

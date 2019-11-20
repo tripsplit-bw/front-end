@@ -6,6 +6,8 @@ import {
 } from 'semantic-ui-react';
 import styled from 'styled-components';
 
+import Trip from './components/Trip';
+
 const Div1 = styled.div`
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
     min-width: 35%;
@@ -41,7 +43,6 @@ const TripCard = props => {
             </Card.Content>
         </Card>
     );
-
 };
 
 export default TripCard;

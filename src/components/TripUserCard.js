@@ -3,6 +3,9 @@ import axios from 'axios';
 import { withFormik, Form, Field } from "formik";
 import styled from "styled-components";
 
+
+import Trip from './Trip';
+
 const Div1 = styled.div``;
 const Div2 = styled.div``;
 const Div3 = styled.div`
@@ -58,9 +61,12 @@ const TripUserCard = props => {
                 </Div3>
                 </Section>
             </Form>
+            <Trip />
+ 
         </Div1>
     );
 };
+
 
 const FormikTripUserCard = withFormik({
     mapPropsToValues({ title }) {
