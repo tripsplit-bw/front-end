@@ -16,6 +16,6 @@ function App() {
       <Route path='/trip' component={Trip} />
     </div>
   );
-}//new comment for alve-mack
+}
 
 export default App;

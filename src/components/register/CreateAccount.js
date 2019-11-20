@@ -67,14 +67,9 @@ const CreateAccount = ({ values }) => {
       <Title>Create An Account</Title>
       <Form>
         <Div2>
-          <Labels>First Name</Labels>
-          <FieldInfo type="text" name="firstName" />
 
-          <Labels>Last Name</Labels>
-          <FieldInfo type="text" name="lastName" />
-
-          <Labels>User Name</Labels>
-          <FieldInfo type="text" name="userName" />
+          <Labels>Username</Labels>
+          <FieldInfo type="text" name="username" />
 
           <Labels>Email </Labels>
           <FieldInfo type="text" name="email" />
@@ -98,11 +93,9 @@ const CreateAccount = ({ values }) => {
   );
 };
 const FormikCreateAccount = withFormik({
-  mapPropsToValues({ firstName, lastName, userName, email, password, confirmPassword }) {
+  mapPropsToValues({ username, email, password, confirmPassword }) {
     return {
-      firstName: firstName || "",
-      lastName: lastName || "",
-      userName: userName || "",
+      userName: username || "",
       email: email || "",
       password: password || "",
       confirmPassword: confirmPassword || ""
