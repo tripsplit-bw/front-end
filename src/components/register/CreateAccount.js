@@ -100,7 +100,7 @@ const CreateAccount = ({ values, errors, touched, status }) => {
           </Button>
         </Link>
         </Form>
-        <Subtitle>Already have an account?<Link to ='/signIn'>
+        <Subtitle>Already have an account?<Link to ='/signin'>
         <Span>Sign In</Span></Link></Subtitle>
 
         {users.map(users => (

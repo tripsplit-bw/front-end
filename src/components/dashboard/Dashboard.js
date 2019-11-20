@@ -8,7 +8,6 @@ import TripCard from './../../TripCard';
 import Trip from './../Trip';
 
 
-
 const Title = styled.h1`
   color: #177c84;
   font-size: 44px;
@@ -90,9 +89,10 @@ const DashBoard = ({ values }) => {
           <YouPaid />
           <H4>PAID TO YOU</H4>
           <PaidToYou /> */}
-
-          <TripCard />
+          
           <Trip />
+          <TripCard />
+
     </Div1>
   );
 };
