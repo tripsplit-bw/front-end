@@ -49,9 +49,14 @@ const Button = styled.button`
   font-size: 16px;
   text-transform: uppercase;
   margin-top: 4%;
+  &:hover {
+    background-color: #D1FFD7;
+    color: #666a86;
+    pointer: grab;
+  }
 `;
 
-const h6 = styled.h6`
+const Subtitle = styled.h6`
   color: grey;
   text-decoration: none;
 `;
@@ -60,6 +65,7 @@ const Span = styled.span`
   text-transform: uppercase;
   text-decoration: none;
   color: #666a86;
+  margin-left: 5px;
 `;
 
 const CreateAccount = ({ values, errors, touched, status }) => {
@@ -89,18 +95,14 @@ const CreateAccount = ({ values, errors, touched, status }) => {
 
         </Div2>
       
-        <Link to =''>
+        <Link to ='/dashboard'>
            <Button className="field" as="button" type="submit" name="submit">
            Create Account
           </Button>
         </Link>
         </Form>
-        <h6>Already have an account?<Link to ='/signIn'>
-        <Span>Sign In</Span></Link></h6>
-
-      </Div1>
-  );
-};
+        <Subtitle>Already have an account?<Link to ='/signIn'>
+        <Span>Sign In</Span></Link></Subtitle>
 
         {users.map(users => (
           <div key={users.id}>
@@ -109,6 +111,12 @@ const CreateAccount = ({ values, errors, touched, status }) => {
             <li>email: {users.email}</li>
           </div>
         ))}
+
+      </Div1>
+  );
+};
+
+
 
   const FormikCreateAccount = withFormik({
     mapPropsToValues({ username, password, email }) {
@@ -140,4 +148,3 @@ const CreateAccount = ({ values, errors, touched, status }) => {
 )(CreateAccount);
 
 export default FormikCreateAccount;
-//comment
