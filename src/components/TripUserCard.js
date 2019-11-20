@@ -4,10 +4,16 @@ import { withFormik, Form, Field } from "formik";
 import styled from "styled-components";
 
 const Div1 = styled.div``;
-const Div2 = styled.div`
+const Div2 = styled.div``;
+const Div3 = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+const Section = styled(Field)`
+    display: flex;
+    flex-direction: row;
 `;
 
 const User = styled(Field)`
@@ -23,6 +29,13 @@ const Userh6 = styled.h6`
     font-size: 16px;
 `;
 
+const Amount = styled(Field)`
+    border-radius: 20px;
+    border: 1px solid gray;
+    width: 180px;
+    padding: 7px 20px; 
+`;
+
 const TripUserCard = props => {
     const { values } = props;
 
@@ -30,12 +43,20 @@ const TripUserCard = props => {
         <Div1 style={{ display: props.hidden ? "none" : "block" }}>
             <Form>
                 <Userh6>Users:</Userh6>
+                <Section>
                 <Div2>
                     <User 
                     type="text"
                     name="title"
-                    placeholder="Name" />
+                    placeholder="Username" />
                 </Div2>
+                <Div3>
+                    <Amount 
+                    type="text"
+                    name="amount"
+                    placeholder="Amount per rider" />
+                </Div3>
+                </Section>
             </Form>
         </Div1>
     );

@@ -52,7 +52,6 @@ const Button = styled.button`
   &:hover {
     background-color: #D1FFD7;
     color: #666a86;
-    pointer: grab;
   }
 `;
 
@@ -115,8 +114,6 @@ const CreateAccount = ({ values, errors, touched, status }) => {
       </Div1>
   );
 };
-
-
 
   const FormikCreateAccount = withFormik({
     mapPropsToValues({ username, password, email }) {

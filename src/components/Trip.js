@@ -43,6 +43,13 @@ const Div3 = styled.div`
     align-items: center;
 `;
 
+const Div4 = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
 const Addbutton = styled(Field)`
     background-color: none;
     border: none;
@@ -101,6 +108,15 @@ const Trip = ({ values }) => {
                 placeholder="$"
                 />
             </Div3>
+
+            <Div4>
+                <Labels>Riders</Labels>
+                <FieldInfo
+                type="text"
+                name="riders"
+                placeholder="Number of Riders"
+                />
+            </Div4>
        
             <TripUserCard />
             {newUser.map((user, index) => (

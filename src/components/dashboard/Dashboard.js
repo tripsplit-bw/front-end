@@ -22,21 +22,6 @@ const Div2 = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const InnerDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  width: 220px;
-`;
-const OutterDiv = styled.div`
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-  margin-top: -25px;
-`;
 
 const FieldInfo = styled(Field)`
   border-radius: 20px;
@@ -70,7 +55,6 @@ const H3 = styled.h3`
 const DashBoard = ({ values }) => {
   return (
     <Div1>
-      <Dropdown />
       <Title>TRIP SPLIT</Title>
       <Form>
         <Link to='/trip'>
@@ -84,32 +68,29 @@ const DashBoard = ({ values }) => {
         </Div2>
       </Form>
 
-      <H3>Pending</H3>
-      <OutterDiv>
-        <InnerDiv>
-          <h4>You Owe</h4>
-          <YouOwe />
-          <H4>Owed to You</H4>
-          <OwedToYou />
-        </InnerDiv>
-      </OutterDiv>
-      <H3>Paid</H3>
-      <OutterDiv>
-        <InnerDiv>
-          <h4>You Paid</h4>
+      <H3>INCOMNG</H3>
+
+          <h4>TO PAY</h4>
+          <ToPay />
+          <H4>DUE TO YOU</H4>
+          <DueToYou />
+
+
+      <H3>PAID</H3>
+
+          <h4>YOU PAID</h4>
           <YouPaid />
-          <H4>Paid to You</H4>
+          <H4>PAID TO YOU</H4>
           <PaidToYou />
 
-        </InnerDiv>
-      </OutterDiv>
+
     </Div1>
   );
 };
 const FormikDashBoard = withFormik({
-  mapPropsToValues({ email, password }) {
+  mapPropsToValues({ username, password }) {
     return {
-      email: email || "",
+      username: username || "",
       password: password || ""
     };
   },
@@ -120,7 +101,7 @@ const FormikDashBoard = withFormik({
         setStatus(response.data);
         console.log(response);
       })
-      .catch(err => console.log(error.response));
+      .catch(error => console.log(error.response));
   }
 })(DashBoard);
 

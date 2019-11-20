@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import CreateAccount from './components/register/CreateAccount';
 import SignIn from './components/login/SignIn';
 import Trip from './components/Trip';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/createaccount' component={CreateAccount} />
       <Route path='/signIn' component={SignIn} />
       <Route path='/trip' component={Trip} />
+      <Route path='/dashboard' component={Dashboard} />
     </div>
   );
 }
