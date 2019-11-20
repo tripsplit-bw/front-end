@@ -4,6 +4,8 @@ import axios from "axios";
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
+import TripCard from './../../TripCard';
+
 const Title = styled.h1`
   color: #177c84;
   font-size: 44px;
@@ -68,9 +70,9 @@ const DashBoard = ({ values }) => {
         </Div2>
       </Form>
 
-      <H3>INCOMNG</H3>
+      <H3>INCOMING</H3>
 
-          <h4>TO PAY</h4>
+          {/* <h4>TO PAY</h4>
           <ToPay />
           <H4>DUE TO YOU</H4>
           <DueToYou />
@@ -81,8 +83,9 @@ const DashBoard = ({ values }) => {
           <h4>YOU PAID</h4>
           <YouPaid />
           <H4>PAID TO YOU</H4>
-          <PaidToYou />
+          <PaidToYou /> */}
 
+          <TripCard />
 
     </Div1>
   );
