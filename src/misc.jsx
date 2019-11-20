@@ -119,3 +119,55 @@ const FormikUpdateProfile = withFormik({
   }
 })(UpdateProfile);
 export default FormikUpdateProfile;
+
+// const CreateAccount = ({ values }) => {
+//   return (
+//     <Div1>
+//       <Title>Create An Account</Title>
+//       <Form>
+//         <Div2>
+
+//           <Labels>Username</Labels>
+//           <FieldInfo type="text" name="username" />
+
+//           <Labels>Email </Labels>
+//           <FieldInfo type="text" name="email" />
+
+//           <Labels>Password</Labels>
+//           <FieldInfo type="password" name="password" />
+
+//           <Labels>Confirm Password</Labels>
+//           <FieldInfo type="password" name="confirmPassword" />
+//         </Div2>
+//         <Link to =''>
+//           <Button className="field" as="button" type="submit" name="submit">
+//           Create Account
+//           </Button>
+//         </Link>
+//       </Form>
+//       <h6>Already have an account?<Link to ='/signIn'>
+//        <Span>Sign In</Span></Link></h6>
+     
+//     </Div1>
+//   );
+// };
+// const FormikCreateAccount = withFormik({
+//   mapPropsToValues({ username, email, password, confirmPassword }) {
+//     return {
+//       userName: username || "",
+//       email: email || "",
+//       password: password || "",
+//       confirmPassword: confirmPassword || ""
+//     };
+//   },
+//   handleSubmit(values, { setStatus }) {
+//     axios
+//       .post("https://reqres.in/api/users/", values)
+//       .then(response => {
+//         setStatus(response.data);
+//         console.log(response);
+//       })
+//       .catch(error => console.log(error.response));
+//   }
+// })(CreateAccount);
+// export default FormikCreateAccount;
