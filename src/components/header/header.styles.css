@@ -1,0 +1,43 @@
+.intro {
+    background-color: #666a86;
+    min-height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.App-logo {
+    height: 20vmin;
+    align-items: flex-start;
+  }
+
+ .top-btns {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    margin-right: 0;
+    /* background-color: red; */
+
+  }
+
+  .register, .signup {
+    margin: 12px;
+    padding: 2%;
+    border: none;
+    border-radius: 18px;
+    width: 13vw;
+    font-size: 1rem;  
+    text-transform: uppercase;
+
+  }
+
+  .register {
+      background-color: #D1FFD7;
+      color: #666a86;
+  }
+
+  .signup {
+      border: 1px solid #666a86;
+      background-color: #F5F6F7;
+      color: #666a86;
+  }
