@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Route exact path='/' component={CreateAccount} />
+      <Route path='/createaccount' component={CreateAccount} />
       <Route path='/signIn' component={SignIn} />
       <Route path='/trip' component={Trip} />
     </div>
