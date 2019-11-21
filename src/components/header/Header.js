@@ -9,7 +9,7 @@ export default function Header() {
        <header className="intro">
          <img src={logo} className="App-logo" alt="logo" />
          <div className="top-btns">
-         <Link to='/createaccount'><button className="register">Register</button></Link>
+         <Link to='/register'><button className="register">Register</button></Link>
          <Link to='/signin'><button className="signup">Sign In</button></Link>
          </div>
       </header>
