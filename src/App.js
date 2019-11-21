@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Route path='/createaccount' component={CreateAccount} />
       <Route path='/signIn' component={SignIn} />
-      <Route path='/trip' component={Trip} />
+      {/* <Route path='/trip' component={Trip} /> */}
       <Route path='/dashboard' component={Dashboard} />
     </div>
   );

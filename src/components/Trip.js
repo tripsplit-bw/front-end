@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import TripUserCard from './TripUserCard';
 
 
-
 const Div1 = styled.div`
     padding: 5%;
     margin: 0 auto;
@@ -147,16 +146,15 @@ const FormikTrip = withFormik({
             total: total || ""
         };
     },
-
-    handleSubmit(values, { setStatus }) {
-        axios
-        .post("https://regres.in/api/users/", values)
-        .then(response => {
-            setStatus(response.data);
-            console.log(response);
-        })
-        .catch(error => console.log(error.response));
-    }
+    // handleSubmit(values, { setStatus }) {
+    //     axios
+    //     .post("https://regres.in/api/users/", values)
+    //     .then(response => {
+    //         setStatus(response.data);
+    //         console.log(response);
+    //     })
+    //     .catch(error => console.log(error.response));
+    // }
 })(Trip);
 export default FormikTrip;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Title = styled.h1`
   color: #177c84;
@@ -52,57 +52,33 @@ const H3 = styled.h3`
   margin-top: 50px;
 `;
 
-const DashBoard = ({ values }) => {
+const Dashboard = () => {
   return (
-    <Div1>
-      <Title>TRIP SPLIT</Title>
-      <Form>
-        <Link to='/trip'>
-            <Fieldbutton className="field" as="button" type="submit" name="submit">
-            Create A Trip
-            </Fieldbutton>
-        </Link>
-        <Div2>
-          <Label3>Search</Label3>
-          <FieldInfo type="text" name="email" />
-        </Div2>
-      </Form>
+    <div>
+      <h3>Test</h3>
+    </div>
+  )
+}
 
-      <H3>INCOMNG</H3>
-
-          <h4>TO PAY</h4>
-          <ToPay />
-          <H4>DUE TO YOU</H4>
-          <DueToYou />
+export default Dashboard
 
 
-      <H3>PAID</H3>
+// const FormikDashBoard = withFormik({
+//   mapPropsToValues({ username, password }) {
+//     return {
+//       username: username || "",
+//       password: password || ""
+//     };
+//   },
+//   handleSubmit(values, { setStatus }) {
+//     axios
+//       .post("https://reqres.in/api/users/", values)
+//       .then(response => {
+//         setStatus(response.data);
+//         console.log(response);
+//       })
+//       .catch(error => console.log(error.response));
+//   }
+// })(DashBoard);
 
-          <h4>YOU PAID</h4>
-          <YouPaid />
-          <H4>PAID TO YOU</H4>
-          <PaidToYou />
-
-
-    </Div1>
-  );
-};
-const FormikDashBoard = withFormik({
-  mapPropsToValues({ username, password }) {
-    return {
-      username: username || "",
-      password: password || ""
-    };
-  },
-  handleSubmit(values, { setStatus }) {
-    axios
-      .post("https://reqres.in/api/users/", values)
-      .then(response => {
-        setStatus(response.data);
-        console.log(response);
-      })
-      .catch(error => console.log(error.response));
-  }
-})(DashBoard);
-
-export default FormikDashBoard;
+// export default FormikDashBoard;

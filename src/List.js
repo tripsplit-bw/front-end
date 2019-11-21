@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import TripCard from './TripCard.js';
+// import React, { useState, useEffect } from 'react';
+// import TripCard from './TripCard.js';
 
-const List = props => {
+// const List = props => {
     useEffect(() => {
 
     }, [])
