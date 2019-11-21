@@ -1,4 +1,5 @@
 import axios from 'axios';
+import axiosWithAuth from '../../utils/axiosWithAuth.js';
 
 export const LOGGING_IN_START = 'LOGGING_IN_START';
 export const LOGGING_IN_SUCCESS = 'LOGGING_IN_SUCCESS';
@@ -6,6 +7,9 @@ export const LOGGING_IN_FAILURE = 'LOGGING_IN_FAILURE';
 export const REGISTERING_START = 'REGISTERING_START';
 export const REGISTERING_SUCCESS = 'REGISTERING_SUCCESS';
 export const REGISTERING_FAILURE = 'REGISTERING_FAILURE';
+export const FETCHING_TRIPS_START = 'FETCHING_TRIPS_START';
+export const FETCHING_TRIPS_SUCCESS = 'FETCHING_TRIPS_SUCCESS';
+export const FETCHING_TRIPS_FAILURE = 'FETCHING_TRIPS_FAILURE';
 
 export const login = creds => async dispatch => {
     dispatch({ type: LOGGING_IN_START });
@@ -26,3 +30,4 @@ export const register = creds => async dispatch => {
         dispatch({ type: REGISTERING_FAILURE, payload: err });
     }
 }
+

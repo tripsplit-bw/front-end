@@ -4,7 +4,10 @@ import {
     LOGGING_IN_FAILURE,
     REGISTERING_START,
     REGISTERING_SUCCESS,
-    REGISTERING_FAILURE
+    REGISTERING_FAILURE,
+    FETCHING_TRIPS_START,
+    FETCHING_TRIPS_SUCCESS,
+    FETCHING_TRIPS_FAILURE
 } from '../actions';
 
 const initialState = {
@@ -15,6 +18,7 @@ const initialState = {
     user: {},
     registering: false,
     loggingIn: false,
+    fetching: false,
     error: {}
 }
 
@@ -56,6 +60,24 @@ const reducer = (state = initialState, action) => {
                 registering: false,
                 error: action.payload
             }
+        case FETCHING_TRIPS_START:
+            return {
+                ...state,
+                fetching: true,
+                error: {}
+            }
+        case FETCHING_TRIPS_SUCCESS:
+                return {
+                    ...state,
+                    fetching: false,
+                    trips: action.payload
+                }
+        case FETCHING_TRIPS_FAILURE:
+                return {
+                    ...state,
+                    fetching: false,
+                    error: action.payload
+                }
         default:
             return state;
     }
