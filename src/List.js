@@ -2,16 +2,16 @@
 // import TripCard from './TripCard.js';
 
 // const List = props => {
-    useEffect(() => {
+//     useEffect(() => {
 
-    }, [])
-    const [trips, setTrips] = useState([]);
-    return (
-        <div>
-            {trips.length != 0 ? trips.map(trip => <TripCard trip={trip} />) : <TripCard />}
-        </div>
-    );
+//     }, [])
+//     const [trips, setTrips] = useState([]);
+//     return (
+//         <div>
+//             {trips.length != 0 ? trips.map(trip => <TripCard trip={trip} />) : <TripCard />}
+//         </div>
+//     );
 
-};
+// };
 
-export default List;
+// export default List;
