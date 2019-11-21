@@ -75,16 +75,8 @@ const Button = styled.button`
 `;
 
 const Trip = ({ values }) => {
-    const [newUser, setNewUser] = useState(new Array(16).fill(true));
+    const [newUser, setNewUser] = useState([]);
     console.log(newUser);
-    const toggleNew = () => {
-        const nextIndex = newUser.findIndex(display => {
-            return display === true;
-        });
-        const nextArray = newUser;
-        nextArray[nextIndex] = !nextArray[nextIndex];
-        setNewUser(nextArray)
-    };
 
     return (
         <Div1>
@@ -123,14 +115,17 @@ const Trip = ({ values }) => {
                 <TripUserCard hidden={newUser[index]} />
             ))}
             <div>
-                <Addbutton
+                {/* <Addbutton
                 type="submit"
                 name="button"
                 as="button"
                 onClick={toggleNew}
                 >
                     add
-                </Addbutton>
+                </Addbutton> */}
+
+                <button onClick={newUser}>Add</button>
+                
             </div>
             <Link to='/dashboard'>
                 <Button as="button" type="submit" name="submit">Add Trip</Button>

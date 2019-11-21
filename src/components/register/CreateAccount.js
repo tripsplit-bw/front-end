@@ -36,6 +36,7 @@ const FieldInfo = styled(Field)`
 const Labels = styled.label`
   margin-top: 4%;
   color: grey;
+  text-transform: uppercase;
 `;
 
 const Button = styled.button`
@@ -81,15 +82,15 @@ const CreateAccount = ({ values, errors, touched, status }) => {
       <Form>
         <Div2>
         <Labels>Username</Labels>
-        <FieldInfo type='text' name='username' />
+        <FieldInfo type='text' name='username' placeholder='Enter a username' />
         {touched.username && errors.username && <p className='error'>{errors.username}</p>}
 
         <Labels>Password</Labels>
-        <FieldInfo type='password' name='password' />
+        <FieldInfo type='password' name='password' placeholder='Enter a password'/>
         {touched.password && errors.password && <p className='error'>{errors.password}</p>}
 
         <Labels>Email</Labels>
-        <FieldInfo type='email' name='email' />
+        <FieldInfo type='email' name='email' placeholder='Enter a valid email' />
         {touched.email && errors.email && <p className='error'>{errors.email}</p>}
 
         </Div2>
