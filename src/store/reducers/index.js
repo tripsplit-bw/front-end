@@ -12,9 +12,7 @@ import {
 
 const initialState = {
     users: [],
-    profile: {},
     trips: [],
-    expenses: [],
     user: {},
     registering: false,
     loggingIn: false,

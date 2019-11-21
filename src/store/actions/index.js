@@ -1,5 +1,5 @@
 import axios from 'axios';
-import axiosWithAuth from '../../utils/axiosWithAuth.js';
+import {axiosWithAuth} from '../../utils/axiosWithAuth.js';
 
 export const LOGGING_IN_START = 'LOGGING_IN_START';
 export const LOGGING_IN_SUCCESS = 'LOGGING_IN_SUCCESS';
@@ -31,3 +31,14 @@ export const register = creds => async dispatch => {
     }
 }
 
+export const fetchTrips = id => async dispatch => {
+    dispatch({ type: FETCHING_TRIPS_START });
+    axiosWithAuth()
+        .get(`/api/trips/:${id}`)
+        .then(response => {
+            dispatch({ type: FETCHING_TRIPS_SUCCESS, payload: response.data });
+        })
+        .catch(err => {
+            dispatch({ type: FETCHING_TRIPS_FAILURE, payload: err });
+        })
+}
