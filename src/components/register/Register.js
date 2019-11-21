@@ -25,9 +25,6 @@ const Register = () => {
 			email: "",
 		    username: "",
 			password: "",
-			password: "",
-			password: "",
-			password: "",
 		});
 	 };
 ​
