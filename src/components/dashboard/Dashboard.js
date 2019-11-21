@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
-import TripCard from './../../TripCard';
-import Trip from './../Trip';
+// import TripCard from './../../TripCard';
+// import Trip from './../Trip';
+
+import NewTrip from './NewTrip';
 
 
 const Title = styled.h1`
@@ -59,10 +61,13 @@ const H3 = styled.h3`
   margin-bottom: 50px;
 `;
 
-const DashBoard = ({ values }) => {
+const DashBoard = () => {
+  const [newUser, setNewUser] = useState([]);
+  const [newTrip, setNewTrip] = useState([]);
+
   return (
     <Div1>
-      <Title>TRIP SPLIT</Title>
+      {/* <Title>TRIP SPLIT</Title>
       <Form>
         <Link to='/trip'>
             <Fieldbutton className="field" as="button" type="submit" name="submit">
@@ -73,7 +78,7 @@ const DashBoard = ({ values }) => {
           <Label3>Search</Label3>
           <FieldInfo type="text" name="email" />
         </Div2>
-      </Form>
+      </Form> */}
 
       <H3>DASHBOARD</H3>
 
@@ -90,28 +95,30 @@ const DashBoard = ({ values }) => {
           <H4>PAID TO YOU</H4>
           <PaidToYou /> */}
           
-          <Trip />
-          <TripCard />
+          <NewTrip />
+          {/* <TripCard /> */}
 
     </Div1>
   );
 };
-const FormikDashBoard = withFormik({
-  mapPropsToValues({ username, password }) {
-    return {
-      username: username || "",
-      password: password || ""
-    };
-  },
-  handleSubmit(values, { setStatus }) {
-    axios
-      .post("https://reqres.in/api/users/", values)
-      .then(response => {
-        setStatus(response.data);
-        // console.log(response);
-      })
-      .catch(error => console.log(error.response));
-  }
-})(DashBoard);
+export default DashBoard;
 
-export default FormikDashBoard;
+// const FormikDashBoard = withFormik({
+//   mapPropsToValues({ username, password }) {
+//     return {
+//       username: username || "",
+//       password: password || ""
+//     };
+//   },
+//   handleSubmit(values) {
+//     axios
+//       .post("https://reqres.in/api/users/", values)
+//       .then(response => {
+//         setStatus(response.data);
+//         // console.log(response);
+//       })
+//       .catch(error => console.log(error.response));
+//   }
+// })(DashBoard);
+
+// export default FormikDashBoard;
