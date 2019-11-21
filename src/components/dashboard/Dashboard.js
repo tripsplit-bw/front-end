@@ -2,7 +2,12 @@ import React, { useState } from "react";
 // import { withFormik, Form, Field } from "formik";
 // import axios from "axios";
 import styled from "styled-components";
+<<<<<<< HEAD
 // import { Link } from 'react-router-dom'
+=======
+import { Link } from 'react-router-dom';
+import TripCard from './TripCard.js';
+>>>>>>> origin/dev
 
 import TripCard from './../../TripCard';
 
@@ -32,6 +37,7 @@ const DashBoard = () => {
           <NewTrip />
           <TripCard />
 
+          <TripCard />
     </Div1>
   );
 };
