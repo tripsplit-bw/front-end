@@ -2,7 +2,8 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import TripCard from './TripCard.js';
 
 const Title = styled.h1`
   color: #177c84;
@@ -71,19 +72,19 @@ const DashBoard = ({ values }) => {
       <H3>INCOMNG</H3>
 
           <h4>TO PAY</h4>
-          <ToPay />
+          {/* <ToPay /> */}
           <H4>DUE TO YOU</H4>
-          <DueToYou />
+          {/* <DueToYou /> */}
 
 
       <H3>PAID</H3>
 
           <h4>YOU PAID</h4>
-          <YouPaid />
+          {/* <YouPaid /> */}
           <H4>PAID TO YOU</H4>
-          <PaidToYou />
+          {/* <PaidToYou /> */}
 
-
+          <TripCard />
     </Div1>
   );
 };
