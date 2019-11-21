@@ -4,8 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import TripUserCard from './TripUserCard';
-import TripCard from '../TripCard';
-import DatePicker from './DatePicker';
+// import TripCard from '../TripCard';
+// import DatePicker from './DatePicker';
 
 
 
@@ -91,8 +91,16 @@ const Button = styled.button`
 `;
 
 const Trip = ({ values }) => {
-    const [newUser, setNewUser] = useState([]);
+    const [newUser, setNewUser] = useState();
     console.log(newUser);
+    const toggleNew = () => {
+        const nextIndex = newUser.findIndex(display => {
+            return display === true;
+        });
+        const nextArray = newUser;
+        nextArray[nextIndex] = !nextArray[nextIndex];
+        setNewUser(nextArray)
+    };
 
     return (
         <Div1>
@@ -118,7 +126,7 @@ const Trip = ({ values }) => {
             </Div3>
 
             <Div4>
-                <DatePicker />
+                {/* <DatePicker /> */}
             </Div4>
             
             <Div5>
@@ -139,11 +147,11 @@ const Trip = ({ values }) => {
                 />
             </Div6>
        
-            <TripCard />
+            {/* <TripCard /> */}
             <TripUserCard />
-            {newUser.map((user, index) => (
+            {/* {newUser.map((user, index) => (
                 <TripUserCard hidden={newUser[index]} />
-            ))}
+            ))} */}
             <div>
                 <Addbutton
                 type="submit"
@@ -154,7 +162,7 @@ const Trip = ({ values }) => {
                     add
                 </Addbutton>
 
-                <button onClick={newUser}>Add</button>
+                {/* <button onClick={newUser}>Add</button> */}
                 
             </div>
             <Link to='/dashboard'>
@@ -173,15 +181,15 @@ const FormikTrip = withFormik({
         };
     },
 
-    handleSubmit(values) {
-        axios
-        .post("https://regres.in/api/users/", values)
-        .then(response => {
-            // setNewUser(response.data);
-            console.log(response);
-        })
-        .catch(error => console.log(error.response));
-    }
+    // handleSubmit(values) {
+    //     axios
+    //     .post("https://regres.in/api/users/", values)
+    //     .then(response => {
+    //         // setNewUser(response.data);
+    //         console.log(response);
+    //     })
+    //     .catch(error => console.log(error.response));
+    // }
 })(Trip);
 export default FormikTrip;
 

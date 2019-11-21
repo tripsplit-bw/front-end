@@ -95,7 +95,7 @@ const CreateAccount = ({ values, errors, touched, status }) => {
 
         </Div2>
       
-        <Link to ='/account'>
+        <Link to ='/dashboard'>
            <Button className="field" as="button" type="submit" name="submit">
            Create Account
           </Button>
@@ -131,17 +131,17 @@ const CreateAccount = ({ values, errors, touched, status }) => {
       password: yup.string().min(8,'Password must be at least 8 characters.').required('Password is required.')
   }),
 
-  handleSubmit(values, {props, setStatus, resetForm }) {
-      console.log(props)
-      axios
-          .post("https://reqres.in/api/users/", values)
-          .then(response => {
-              setStatus(response.data);
-              console.log(response.data);
-              resetForm();
-          })
-          .catch(error => console.log(error.response));
-  }
+  // handleSubmit(values, {props, setStatus, resetForm }) {
+  //     console.log(props)
+  //     axios
+  //         .post("https://reqres.in/api/users/", values)
+  //         .then(response => {
+  //             setStatus(response.data);
+  //             console.log(response.data);
+  //             resetForm();
+  //         })
+  //         .catch(error => console.log(error.response));
+  // }
 }  
 )(CreateAccount);
 

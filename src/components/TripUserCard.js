@@ -74,15 +74,15 @@ const FormikTripUserCard = withFormik({
             title: title || ""
         };
     },
-    handleSubmit(values, { setStatus }) {
-        axios
-        .post("https://regres.in/api/users/", values)
-        .then(response => {
-            setStatus(response.data);
-            console.log(response);
-        })
-        .catch(error => console.log(error.response));
-    }
+    // handleSubmit(values, { setStatus }) {
+    //     axios
+    //     .post("https://regres.in/api/users/", values)
+    //     .then(response => {
+    //         setStatus(response.data);
+    //         console.log(response);
+    //     })
+    //     .catch(error => console.log(error.response));
+    // }
 }) (TripUserCard);
 
 export default FormikTripUserCard;

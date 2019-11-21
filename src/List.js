@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import TripCard from './TripCard.js';
 
 const List = props => {
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [])
+    // }, [])
     const [trips, setTrips] = useState([]);
     return (
         <div>
