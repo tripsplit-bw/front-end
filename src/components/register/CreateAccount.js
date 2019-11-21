@@ -95,7 +95,7 @@ const CreateAccount = ({ values, errors, touched, status }) => {
 
         </Div2>
       
-        <Link to ='/dashboard'>
+        <Link to ='/account'>
            <Button className="field" as="button" type="submit" name="submit">
            Create Account
           </Button>

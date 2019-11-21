@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { withFormik, Form, Field } from "formik";
 import styled from "styled-components";
 import axios from "axios";
+import { Link } from 'react-router-dom';
+import { Dashboard } from '../dashboard/Dashboard';
 
 
 const Div1 = styled.div`
@@ -82,9 +84,11 @@ function SignIn() {
                         value={password}
                     />
             </Div1>
-            <Button className="field" as="button" type="submit" name="submit">
-          SIGN IN
-          </Button>
+            <Link to='/dashboard'>
+                <Button className="field" as="button" type="submit" name="submit">
+                SIGN IN
+                </Button>
+            </Link>
           </Form>
         </div>
     );

@@ -41,8 +41,12 @@ const TripCard = props => {
                 {props.trip ? props.trip.users.length : 0} users
             
             </Card.Content>
+            <Trip />
         </Card>
+
+    
     );
+
 };
 
 export default TripCard;

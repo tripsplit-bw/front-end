@@ -108,7 +108,7 @@ const FormikDashBoard = withFormik({
       .post("https://reqres.in/api/users/", values)
       .then(response => {
         setStatus(response.data);
-        console.log(response);
+        // console.log(response);
       })
       .catch(error => console.log(error.response));
   }

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import TripUserCard from './TripUserCard';
+import TripCard from '../TripCard';
 
 
 
@@ -110,19 +111,20 @@ const Trip = ({ values }) => {
                 />
             </Div4>
        
+            <TripCard />
             <TripUserCard />
-            {newUser.map((user, index) => (
+            {/* {newUser.map((user, index) => (
                 <TripUserCard hidden={newUser[index]} />
-            ))}
+            ))} */}
             <div>
-                {/* <Addbutton
+                <Addbutton
                 type="submit"
                 name="button"
                 as="button"
-                onClick={toggleNew}
+                // onClick={toggleNew}
                 >
                     add
-                </Addbutton> */}
+                </Addbutton>
 
                 <button onClick={newUser}>Add</button>
                 
