@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { withFormik, Form, Field } from "formik";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import axios from "axios";
+import { Link } from 'react-router-dom';
+
 
 
 const Div1 = styled.div`
@@ -21,11 +21,11 @@ const Labels = styled.label`
   color: grey;
 `;
 
-const FieldInfo = styled(Field)`
+const Input = styled.div`
   border-radius: 20px;
   border: 1px solid gray;
   width: 180px;
-  padding: 7px 20px;
+  padding: 15px 30px;
 `;
 
 
@@ -41,70 +41,53 @@ const Button = styled.button`
   background: none;
 `;
 
-// const Span = styled.span`
-//   text-decoration: underline;
-// `;
-
-function SignIn() {
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
-
-    // const logName = () => {
-    //     console.log(userName);
-    //     console.log(password);
-    // };
+const SignIn = () => {
+    const [userName, setUserName] = useState({ username: "", password: "" });
 
     const handleUserNameInput = event => {
-        setUserName(event.target.value);
+        setUserName({...userName, [event.target.name]: event.target.value});
     };
-   
-    const handlePasswordInput = event => {
-        setPassword(event.target.value);
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log(userName.name);
+        console.log(userName.password);
     };
 
     return (
         <div>
-            <h2>Welcome back!</h2>
-            <Title>Log In Here</Title>
-            <Form>
+            {console.log(userName)}
+
+  
+
+                <h2>Welcome back!</h2>
+                <Title>Log In Here</Title>
+                <form onSubmit={event => handleSubmit(event)}>
                 <Div1>
                     <Labels>Username</Labels>
-                    <FieldInfo
+                    <Input
                         type="text"
-                        onChange={handleUserNameInput}
-                        value={userName}
+                        name="username"
+                        value={userName.username}
+                        onChange={event => handleUserNameInput(event)}
                     />
-                    
+                   
                     <Labels>Password</Labels>
-                    <FieldInfo
+                    <Input
                         type="password"
-                        onChange={handlePasswordInput}
-                        value={password}
+                        name="password"
+                        value={userName.password}
+                        onChange={event => handleUserNameInput(event)}
                     />
-            </Div1>
-            <Button className="field" as="button" type="submit" name="submit">
-          SIGN IN
-          </Button>
-          </Form>
+                </Div1>
+                <Link to='/dashboard'>
+                    <Button className="field" as="button" type="submit" name="submit">
+                    SIGN IN
+                    </Button>
+                </Link>
+            </form>
         </div>
     );
 }
 
-const FormikSignIn = withFormik({
-    mapPropsToValues({ userName, password }) {
-        return {
-            username: userName || "",
-            password: password || ""
-        };
-    },
-    handleSubmit(values, { setStatus }) {
-        axios
-        .post("https://regre.in/api/users/", values)
-        .then(response => {
-            setStatus(response.data);
-            console.log(response);
-        })
-        .catch(error => console.log(error.response));
-    }
-})(SignIn)
-export default FormikSignIn;
+export default SignIn;

@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import TripUserCard from './TripUserCard';
+// import TripCard from '../TripCard';
+// import DatePicker from './DatePicker';
 
 
 
@@ -50,6 +52,20 @@ const Div4 = styled.div`
     align-items: center;
 `;
 
+const Div5 = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Div6 = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
 const Addbutton = styled(Field)`
     background-color: none;
     border: none;
@@ -75,7 +91,7 @@ const Button = styled.button`
 `;
 
 const Trip = ({ values }) => {
-    const [newUser, setNewUser] = useState(new Array(16).fill(true));
+    const [newUser, setNewUser] = useState();
     console.log(newUser);
     const toggleNew = () => {
         const nextIndex = newUser.findIndex(display => {
@@ -92,45 +108,62 @@ const Trip = ({ values }) => {
      
         <Form>
             <Div2>
-                <Labels>Trip</Labels>
+                <Labels>Event Name</Labels>
+                <FieldInfo
+                    type="text"
+                    name="title"
+                    placeholder="Event name"
+                />
+            </Div2>
+
+            <Div3>
+                <Labels>Destination</Labels>
                 <FieldInfo
                     type="text"
                     name="title"
                     placeholder="Trip destination"
                 />
-            </Div2>
+            </Div3>
+
+            <Div4>
+                {/* <DatePicker /> */}
+            </Div4>
             
-            <Div3>
-                <Labels>Trip Total</Labels>
+            <Div5>
+                <Labels>Expense</Labels>
                 <FieldInfo
                 type="text"
                 name="total"
                 placeholder="$"
                 />
-            </Div3>
+            </Div5>
 
-            <Div4>
+            <Div6>
                 <Labels>Riders</Labels>
                 <FieldInfo
                 type="text"
                 name="riders"
                 placeholder="Number of Riders"
                 />
-            </Div4>
+            </Div6>
        
+            {/* <TripCard /> */}
             <TripUserCard />
-            {newUser.map((user, index) => (
+            {/* {newUser.map((user, index) => (
                 <TripUserCard hidden={newUser[index]} />
-            ))}
+            ))} */}
             <div>
                 <Addbutton
                 type="submit"
                 name="button"
                 as="button"
-                onClick={toggleNew}
+                // onClick={toggleNew}
                 >
                     add
                 </Addbutton>
+
+                {/* <button onClick={newUser}>Add</button> */}
+                
             </div>
             <Link to='/dashboard'>
                 <Button as="button" type="submit" name="submit">Add Trip</Button>
@@ -148,15 +181,15 @@ const FormikTrip = withFormik({
         };
     },
 
-    handleSubmit(values, { setStatus }) {
-        axios
-        .post("https://regres.in/api/users/", values)
-        .then(response => {
-            setStatus(response.data);
-            console.log(response);
-        })
-        .catch(error => console.log(error.response));
-    }
+    // handleSubmit(values) {
+    //     axios
+    //     .post("https://regres.in/api/users/", values)
+    //     .then(response => {
+    //         // setNewUser(response.data);
+    //         console.log(response);
+    //     })
+    //     .catch(error => console.log(error.response));
+    // }
 })(Trip);
 export default FormikTrip;
 
