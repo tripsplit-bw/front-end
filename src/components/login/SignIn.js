@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
@@ -27,7 +27,6 @@ const Input = styled.div`
   width: 180px;
   padding: 15px 30px;
 `;
-
 
 const Button = styled.button`
   border: 3px solid #D1FFD7;

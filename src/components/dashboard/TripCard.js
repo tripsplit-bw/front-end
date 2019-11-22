@@ -8,6 +8,13 @@ import styled from 'styled-components';
 
 
 const Div1 = styled.div`
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Div2 = styled.div`
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
     min-width: 35%;
     padding: 3%;
@@ -19,29 +26,40 @@ const Div1 = styled.div`
     border-radius: 20px;
 `;
 
+const Title = styled.h3`
+  color: #666a86;
+  text-transform: uppercase;
+`;
+
 const TripCard = props => {
     return (
-        <Card>
-            <Image src='' wrapped ui={false} />
-            <Card.Content>
-                <Div1>
-                    <Card.Header>{props.trip ? props.trip.name : 'Trip Name'}</Card.Header>
-                </Div1>
-            <Card.Meta>
-                {props.trip ? props.trip.users.map(user => <p>{user.name}</p>) : 'User List'}
-            </Card.Meta>
-            <Card.Description>
-                Information
-            </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-            
-                <Icon name='user' />
-                {props.trip ? props.trip.users.length : 0} users
-            
-            </Card.Content>
-        </Card>
-
+        
+        
+        <Div1>
+            <div>
+                <Title>TRIP HISTORY</Title>
+            </div>
+            <Card>
+                <Image src='' wrapped ui={false} />
+                <Card.Content>
+                    <Div2>
+                        <Card.Header>{props.trip ? props.trip.name : 'Trip Name'}</Card.Header>
+                    </Div2>
+                <Card.Meta>
+                    {props.trip ? props.trip.users.map(user => <p>{user.name}</p>) : 'User List'}
+                </Card.Meta>
+                <Card.Description>
+                    Information
+                </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                
+                    <Icon name='user' />
+                    {props.trip ? props.trip.users.length : 0} users
+                
+                </Card.Content>
+            </Card>
+        </Div1>  
     
     );
 
