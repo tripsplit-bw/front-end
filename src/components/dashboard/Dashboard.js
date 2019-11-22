@@ -2,14 +2,8 @@ import React, { useState } from "react";
 // import { withFormik, Form, Field } from "formik";
 // import axios from "axios";
 import styled from "styled-components";
-<<<<<<< HEAD
 // import { Link } from 'react-router-dom'
-=======
-import { Link } from 'react-router-dom';
 import TripCard from './TripCard.js';
->>>>>>> origin/dev
-
-import TripCard from './../../TripCard';
 
 import NewTrip from './NewTrip';
 
@@ -26,6 +20,8 @@ const H3 = styled.h3`
 `;
 
 const DashBoard = () => {
+
+//Getter function 👇
   const [user, setUser] = useState();
   const [trip, setTrip] = useState();
 
@@ -33,11 +29,12 @@ const DashBoard = () => {
     <Div1>
       <H3>DASHBOARD</H3>
           
-          
+          {/* Should be a form that allows you to add new trips. We'll need to pass this a getter function. */}
           <NewTrip />
+
+          {/* Need to have a list component that renders all trips the user has been on. That will render the trip cards. */}
           <TripCard />
 
-          <TripCard />
     </Div1>
   );
 };

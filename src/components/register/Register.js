@@ -9,17 +9,16 @@ const Register = () => {
 		email: '',
 		username: '',
 		password: '',
-      });
-      
-​	 const handleChanges = e => {
+	  });
+	  
+	  const handleChanges = e => {
 		console.log(item)
 		setItem({ ...item, [e.target.name]: e.target.value });
 	};
-​
+
 	const submitForm = e => {
 		e.preventDefault();
 		// dispatch(addNew(item));
-​
 		// This is a reset for the password
 		setItem({
 			email: "",
@@ -27,7 +26,6 @@ const Register = () => {
 			password: "",
 		});
 	 };
-​
 	return (
 		<div>
 			<h1>Create Account</h1>
@@ -45,15 +43,14 @@ const Register = () => {
 					<input type="password" name="password" onChange={handleChanges} value={item.password}></input>
 				</label>
                 <Link to ='/dashboard'>
-                    <Button className="field" as="button" type="submit" name="submit">
+                    <button className="field" as="button" type="submit" name="submit">
                     Create Account
-                    </Button>
+                    </button>
                 </Link>
 			</form>
-                <Subtitle>Already have an account?<Link to ='/signin'>
-                <Span>Sign In</Span></Link></Subtitle>
+                <h5>Already have an account?<Link to ='/signin'>
+                <span>Sign In</span></Link></h5>
 		</div>
 	)
 }
-​
 export default Register;

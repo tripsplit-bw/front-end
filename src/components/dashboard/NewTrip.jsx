@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 // };
 
 const NewTrip = () => {
-    const [trip, setTrip] = useState()
+    // const [trip, setTrip] = useState()
 
     return (
         <div>New trip info</div>
