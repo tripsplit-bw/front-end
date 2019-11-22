@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-
+import { login } from '../../store/actions'; 
+import { connect } from 'react-redux';
 
 const Div1 = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Labels = styled.label`
   color: grey;
 `;
 
-const Input = styled.div`
+const Input = styled.input`
   border-radius: 20px;
   border: 1px solid gray;
   width: 180px;
@@ -50,9 +51,13 @@ const SignIn = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(userName.name);
-        console.log(userName.password);
+        login(userName);
+        setUserName({
+          username: "",
+          password: "",
+        });
     };
+
 
     return (
         <div>
@@ -90,4 +95,14 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+const mapStateToProps = state => {
+  return {
+      user: state.user
+  }
+}
+
+export default connect(
+  mapStateToProps,
+{
+  login
+})(SignIn);

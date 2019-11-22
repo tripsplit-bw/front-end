@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { withFormik, Form, Field } from "formik";
 // import axios from "axios";
 import styled from "styled-components";
@@ -6,6 +6,9 @@ import styled from "styled-components";
 import TripCard from './TripCard.js';
 
 import NewTrip from './NewTrip';
+
+import { fetchTrips } from '../../store/actions'; 
+import { connect } from 'react-redux';
 
 
 const Div1 = styled.div`
@@ -25,6 +28,11 @@ const DashBoard = () => {
   const [user, setUser] = useState();
   const [trip, setTrip] = useState();
 
+  useEffect(() => {
+    fetchTrips();
+    console.log('Initial Fetch...')
+  }, [])
+
   return (
     <Div1>
       <H3>DASHBOARD</H3>
@@ -34,10 +42,22 @@ const DashBoard = () => {
 
           {/* Need to have a list component that renders all trips the user has been on. That will render the trip cards. */}
           <TripCard />
-
+      <p onClick={fetchTrips()}>
+        click
+      </p>
     </Div1>
   );
 };
 
-export default DashBoard;
+const mapStateToProps = state => {
+  return {
+      trips: state.trips
+  }
+}
+
+export default connect(
+  mapStateToProps,
+{
+  fetchTrips
+})(DashBoard);
 

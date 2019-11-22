@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { registerDecorator } from 'handlebars';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { register } from '../../store/actions';
 
-const Register = () => {
+const Register = props => {
 	// const dispatch = useDispatch()
 	const [item, setItem] = useState({
 		email: '',
@@ -20,16 +22,18 @@ const Register = () => {
 		e.preventDefault();
 		// dispatch(addNew(item));
 		// This is a reset for the password
+		register(item);
 		setItem({
 			email: "",
 		    username: "",
 			password: "",
 		});
+		console.log('end of submitForm()');
 	 };
 	return (
 		<div>
 			<h1>Create Account</h1>
-			<form>
+			<form onSubmit={submitForm}>
 				<label>
 					Email
 					<input type="email" name="email" onChange={handleChanges} value={item.email}></input>
@@ -53,4 +57,15 @@ const Register = () => {
 		</div>
 	)
 }
-export default Register;
+
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(
+    mapStateToProps,
+{
+    register
+})(Register);
