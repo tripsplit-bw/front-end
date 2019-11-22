@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-// const handleChange = event => {
-//     setTrip(event.target.value);
-// };
 
 const Labels = styled.label`
   margin-top: 2%;
@@ -113,7 +110,7 @@ const NewTrip = () => {
                         onChange={event => handleTripInput(event)}
                     />
                 </Div2>
-                <Link to='/dashboard'>
+                <Link to=''>
                     <Button className="field" as="button" type="submit" name="submit">
                     ADD NEW TRIP
                     </Button>
